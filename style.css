@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'spaceGrotesk';
+    src: url("../maybemaru.github.io/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url("../maybemaru.github.io/assets/fonts/Raleway-VariableFont_wght.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background-color: #D0B5E5;
+  color: #6E5084
+}
+
+h1, h2, h3 {
+    font-family: 'spaceGrotesk';
+}
+
+p {
+    font-family: 'raleway';
+}
