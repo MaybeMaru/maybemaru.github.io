@@ -3,30 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Test</title>
+    <title>MaybeMaru</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="overflow: hidden;">
     <canvas id="shaderCanvas"></canvas>
     <script src="snowShader.js"></script>
 
     <header>
-        <div class="title">My Website</div>
+        <div class="title">MaybeMaru</div>
         <div class="header-buttons">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a onclick="window.location.href='index.html'">Home</a>
+            <a onclick="window.location.href='art.html'">Art</a>
+            <a onclick="window.location.href='code.html'">Code</a>
+            <a onclick="window.location.href='about.html'">About</a>
+            <a onclick="window.location.href='contact.html'">Contact</a>
         </div>
     </header>
 
-    <div>
-        <h1>Some Title</h1>
-        <p>Hello <strong>World</strong></p>
-        <button onclick="window.location.href='other.html';">Click Me</button>
-        <button>Click Me1</button>
-        <button>Click Me2</button>
-        <h1></h1>
-        <img src="images/test.png" />
+    <div style="display: flex; align-items: center; padding: 7% 10%;">
+        <div style="flex: 1;">
+            <h1 style="font-size: 50px;">MaybeMaru</h1>
+            <p style="font-size: 25px; width: 400px;">
+                I'm an 18-year-old passionate Spanish artist and programmer,
+                aiming to bring ideas to life while working toward a future
+                in the creative industry
+            </p>
+        </div>
+
+        <div class="cropped-img">
+            <div class="slideshow-container">
+                <img src="https://art.ngfiles.com/images/5801000/5801696_911144_themaru_untitled-5801696.8b5d594287117236eaaccd70ed196ff7.webp?f1718838605" class="active">
+                <img src="https://art.ngfiles.com/images/5977000/5977842_1128533_themaru_ocean-man.f3bfee050af179159bba05125010567b.webp?f1724445507">
+                <img src="https://art.ngfiles.com/images/5981000/5981463_1132876_themaru_spanish-miku.fff2c29aad581a07dd17c4c65a26723e.webp?f1724548384">
+                <img src="https://art.ngfiles.com/medium_views/5159000/5159484_134942_themaru_spooky-funkin.41693dadd8360c3f702b197cd866ca15.webp?f1698362213">
+            </div>
+        </div>
+
+        <script>
+            let index = 0;
+            const images = document.querySelectorAll(".slideshow-container img");
+        
+            function fadeImages() {
+                images[index].classList.remove("active");
+                index = (index + 1) % images.length;
+                images[index].classList.add("active");
+            }
+        
+            setInterval(fadeImages, 3000);
+        </script>
     </div>
+
+    <img
+    src="https://www.brendoncolby.com/images/under_construction.gif"
+    style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%) scale(0.5); transform-origin: center; width: auto;"
+    >
 </body>
 </html>
