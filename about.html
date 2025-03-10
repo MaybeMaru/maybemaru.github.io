@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="shaderCanvas"></canvas>
+    <script src="snowShader.js"></script>
+
+    <header>
+        <div class="title">MaybeMaru</div>
+        <div class="header-buttons">
+            <a onclick="window.location.href='index.html'">Home</a>
+            <a onclick="window.location.href='art.html'">Art</a>
+            <a onclick="window.location.href='code.html'">Code</a>
+            <a onclick="window.location.href='about.html'">About</a>
+            <a onclick="window.location.href='contact.html'">Contact</a>
+        </div>
+    </header>
+
+    <div style="display: flex;">
+        <div style="padding: 1% 1%;">
+            <h1>Who is this Maru guy?</h1>
+            
+            <p>I'm an 18-year-old Spanish student who has always been interested in art-related topics.</p>
+            <p>I'm a self-taught artist and programmer. Although I'm currently attending art school and will soon start a degree in animation.</p>
+    
+            <p>I have experience with art programs such as Animate (Flash), Krita, Blender, and Photoshop.
+            <a href="#" onclick="window.location.href='art.html';" style="text-decoration: none;">(Find examples here)</a></p>
+    
+            <p>I have experience with programming languages such as JavaScript, Haxe, Python, and C#.
+            <a href="#" onclick="window.location.href='code.html';" style="text-decoration: none;">(Find examples here)</a></p>
+    
+        </div>
+    
+        <div class="image-container" id="animatedImage">
+            <img src="images/test.png">
+        </div>
+    
+        <script>
+            window.addEventListener("load", () => {
+                // pop in animation crap
+                const image = document.getElementById("animatedImage");
+                image.classList.add("pop-in");
+    
+                setTimeout(() => {
+                   image.classList.add("floating");
+                }, 1000);
+            });
+        </script>  
+    </div>
+
+    <img
+    src="https://www.brendoncolby.com/images/under_construction.gif"
+    style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%) scale(0.5); transform-origin: center; width: auto;"
+    >
+</body>
+</html>

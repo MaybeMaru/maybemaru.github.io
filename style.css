@@ -138,3 +138,23 @@ header:hover {
     color: #dcc9eb;
     cursor: pointer;
 }
+
+.image-container {
+    transform: translateY(100vh) translateX(145vh);
+    transition: transform 1s ease-out;
+    position: fixed;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(25vh) translateX(145vh); }
+    50% { transform: translateY(35vh) translateX(145vh); }
+    100% { transform: translateY(25vh) translateX(145vh); }
+}
+
+.pop-in {
+    transform: translateY(25vh) translateX(145vh);
+}
+
+.floating {
+    animation: floatAnimation 4s infinite ease-in-out;
+}
