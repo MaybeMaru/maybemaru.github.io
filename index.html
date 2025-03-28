@@ -7,19 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="shaderCanvas"></canvas>
-    <script src="snowShader.js"></script>
-
-    <header>
-        <div class="title">MaybeMaru</div>
-        <div class="header-buttons">
-            <a onclick="window.location.href='index.html'">Home</a>
-            <a onclick="window.location.href='art.html'">Art</a>
-            <a onclick="window.location.href='code.html'">Code</a>
-            <a onclick="window.location.href='about.html'">About</a>
-            <a onclick="window.location.href='contact.html'">Contact</a>
-        </div>
-    </header>
+    <script src="js/common.js"></script>
 
     <div style="display: flex; align-items: center; padding: 5% 10%;">
         <div style="flex: 1;">
@@ -41,24 +29,6 @@
                 <img src="images/beanbagger.png">
             </div>
         </div>
-
-        <script>
-            let index = 0;
-            const images = document.querySelectorAll(".slideshow-container img");
-        
-            function fadeImages() {
-                images[index].classList.remove("active");
-                index = (index + 1) % images.length;
-                images[index].classList.add("active");
-            }
-        
-            setInterval(fadeImages, 3000);
-        </script>
     </div>
-
-    <img
-    src="https://www.brendoncolby.com/images/under_construction.gif"
-    style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%) scale(0.5); transform-origin: center; width: auto;"
-    >
 </body>
 </html>

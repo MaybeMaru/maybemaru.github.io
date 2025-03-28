@@ -139,6 +139,11 @@ header:hover {
     cursor: pointer;
 }
 
+.header-buttons a.current-page {
+    font-weight: bold;
+    color: #ebe0f4;
+}
+
 .image-container {
     transform: translateY(100vh) translateX(145vh);
     transition: transform 1s ease-out;
@@ -165,6 +170,7 @@ header:hover {
 }
 
 .clickable-image img {
+    box-shadow: none;
     width: 300px;
     transition: transform 0.2s ease-in-out;
     display: block;
@@ -172,4 +178,13 @@ header:hover {
 
 .clickable-image:hover img {
     transform: scale(1.1);
+}
+
+.construction-gif {
+    position: fixed; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%) scale(0.5); 
+    transform-origin: center; 
+    width: auto;
 }
