@@ -1,10 +1,7 @@
 function initCommon()
 {
-    // shader bg
-    document.body.insertAdjacentHTML('afterbegin', `
-        <canvas id="shaderCanvas"></canvas>
-        <script src="js/snowShader.js"><\/script>
-    `);
+    // snow bg
+    loadScript('js/snowbg.js');
 
     // header
     document.body.insertAdjacentHTML('afterbegin', `
@@ -27,6 +24,13 @@ function initCommon()
     `);
     
     highlightCurrentPage();
+}
+
+function loadScript(url) {
+  const script = document.createElement('script');
+  script.src = url;
+  script.type = 'text/javascript';
+  document.head.appendChild(script);
 }
 
 // highlight current page in header

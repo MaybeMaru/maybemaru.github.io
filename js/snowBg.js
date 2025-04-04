@@ -2,7 +2,9 @@
 // https://www.shadertoy.com/view/3ld3zX
 // All credits to the original creators
 
-const canvas = document.getElementById("shaderCanvas");
+const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
+
 const gl = canvas.getContext("webgl");
 
 const vertexShaderSource = `
