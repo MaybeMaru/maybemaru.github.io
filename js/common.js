@@ -1,7 +1,9 @@
 function initCommon()
 {
     // snow bg
-    loadScript('js/snowBg.js');
+    if (!isMobile()) {
+        loadScript('js/snowBg.js');
+    }
 
     // header
     document.body.insertAdjacentHTML('afterbegin', `
@@ -25,6 +27,10 @@ function initCommon()
     `);
     
     highlightCurrentPage();
+}
+
+function isMobile() {
+  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 function loadScript(url) {
