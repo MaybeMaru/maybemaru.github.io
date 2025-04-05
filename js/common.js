@@ -9,6 +9,7 @@ function initCommon()
         <div class="title">MaybeMaru</div>
         <nav class="header-buttons">
             <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
             <a href="art.html">Art</a>
             <a href="code.html">Code</a>
             <a href="about.html">About</a>
