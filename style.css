@@ -186,5 +186,5 @@ header:hover {
     left: 50%; 
     transform: translateX(-50%) scale(0.5); 
     transform-origin: center; 
-    width: auto;
+    height: 15%;
 }
