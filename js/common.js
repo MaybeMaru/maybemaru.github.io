@@ -1,7 +1,7 @@
 function initCommon()
 {
     // snow bg
-    loadScript('js/snowbg.js');
+    loadScript('js/snowBg.js');
 
     // header
     document.body.insertAdjacentHTML('afterbegin', `
