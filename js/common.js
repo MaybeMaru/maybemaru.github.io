@@ -1,9 +1,9 @@
 function initCommon()
 {
     // snow bg
-    //if (!isMobile()) {
+    if (!isMobile()) {
         loadScript('js/snowBg.js');
-    //}
+    }
 
     // header
     document.body.insertAdjacentHTML('afterbegin', `

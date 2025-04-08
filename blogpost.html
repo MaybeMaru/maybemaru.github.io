@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="js/common.js"></script>
+
+  <div style="padding-top: 4%; display: flex; justify-content: center; align-items: center;">
+    <div id="post-container"  class="blogpost-body" style="min-width: 80%; min-height: 73vh;"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("post");
+
+    async function loadPost() {
+      if (!file) {
+        document.getElementById("post-container").innerText = "404 Post not found.";
+        return;
+      }
+
+      try {
+        const res = await fetch("blogposts/" + file + ".md");
+        const text = await res.text();
+        
+        const postContainer = document.getElementById("post-container");
+        postContainer.innerHTML = marked.parse(text);
+      }
+      catch (err) {
+        document.getElementById("post-container").innerText = "Failed to load post.";
+        console.error(err);
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+</html>
