@@ -1,7 +1,8 @@
 var container = document.getElementById("posts");
 
 var posts = [
-    "05-04-2025"
+    "05-04-2025",
+    "02-03-2026"
 ];
 
 function getTitle(post) {
