@@ -6,8 +6,9 @@ var posts = [
 ];
 
 function getTitle(post) {
-  const match = post.match(/^# (.+)/m);
-  return match ? match[1].trim() : "Untitled";
+  var match = post.match(/^# (.+)/m);
+  match = match ? match[1].trim() : "Untitled";
+  return String(match).trim().split('/')[0].split('>').pop().replace('<', '')
 }
 
 function getFirstParagraph(markdownText)
