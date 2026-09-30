@@ -5,6 +5,21 @@ var posts = [
     "02-03-2026"
 ];
 
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
 function getTitle(post) {
   var match = post.match(/^# (.+)/m);
   match = match ? match[1].trim() : "Untitled";
@@ -34,34 +49,42 @@ function getFirstParagraph(markdownText)
   return null;
 }
 
-async function loadPosts(posts) {
-    for (const file of posts.reverse()) {
-        const res = await fetch('blogposts/' + file + '.md');
-        const text = await res.text();
-    
-        const postTitle = getTitle(text);
-        const postSummary = getFirstParagraph(text);
+async function loadPosts(posts)
+{
+    for (const file of posts.reverse())
+    {
+      const res = await fetch('blogposts/' + file + '.md');
+      const text = await res.text();
+  
+      const postTitle = getTitle(text);
+      const postSummary = getFirstParagraph(text);
 
-        const post = document.createElement('body');
-        post.className = "blogpost-body";
-        container.appendChild(post);
+      const post = document.createElement('body');
+      post.className = "blogpost-body";
+      container.appendChild(post);
 
-        post.style.cursor = 'pointer';
-        post.onclick = () => {
-            window.location.href = 'blogpost.html?post=' + file;
-          };
+      post.style.cursor = 'pointer';
+      post.onclick = () => {
+        window.location.href = 'blogpost.html?post=' + file;
+      };
 
-        const title = document.createElement('h1');
-        title.innerHTML = postTitle;
-        post.appendChild(title);
+      const title = document.createElement('h1');
+      title.innerHTML = postTitle;
+      post.appendChild(title);
 
-        const date = document.createElement('h3');
-        date.innerHTML = "Posted on: " + file.split("-").join(" - ");
-        post.appendChild(date);
+      const date = document.createElement('h3');
+      
+      const split = file.split("-");
+      const day = split[0];
+      const month = months[parseInt(split[1]) - 1];
+      const year = split[2];
+      
+      date.innerHTML = "Posted on: " + month + " " + day + ", " + year;
+      post.appendChild(date);
 
-        const summary = document.createElement('p');
-        summary.innerHTML = postSummary;
-        post.appendChild(summary);
+      const summary = document.createElement('p');
+      summary.innerHTML = postSummary;
+      post.appendChild(summary);
     };
 }
 
